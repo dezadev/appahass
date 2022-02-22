@@ -33,7 +33,10 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 // $routes->get('/', 'Home::asy');
-
+// $routes->group('', ['filter' => 'login'], function($routes){
+//     $routes->get('home', 'Home::home');
+//     $routes->get('/', 'Home::index');
+// }); 
 /*
  * --------------------------------------------------------------------
  * Additional Routing

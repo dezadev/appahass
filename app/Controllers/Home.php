@@ -10,7 +10,7 @@ class Home extends BaseController
             'title' => 'DASBOARD',
         ];
 
-        return view('template/layout', $data);
+        return view('template/_home', $data);
     }
     public function asy()
     {

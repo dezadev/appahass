@@ -15,7 +15,7 @@
                     <a href="#" class="nav-link active">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
-                            Menu
+                            MENU
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -42,29 +42,35 @@
                 </li>
                 <br>
                 <!-- menu ke dua -->
-                <li class="nav-item menu-open">
+                <li class="nav-item">
                     <a href="#" class="nav-link active">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
-                            Menu
-                            <i class="right fas fa-angle-left"></i>
+                            MASTER DATA
+                            <!-- <i class="right fas fa-angle-left"></i> -->
                         </p>
                     </a>
                     <ul class="nav">
                         <li class="nav-item">
-                            <a href="/home/asy" class="nav-link">
+                            <a href="/materi" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>MASTER</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>AHASS SYSTEM</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/home/claim" class="nav-link">
+                            <a href="#" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>WARANTY CLAIM</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/home/lkh" class="nav-link">
+                            <a href="#" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>LKH</p>
                             </a>
