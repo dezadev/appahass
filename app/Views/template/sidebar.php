@@ -54,13 +54,13 @@
                         <li class="nav-item">
                             <a href="/materi" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>MASTER</p>
+                                <p>MATERI</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="/group" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>AHASS SYSTEM</p>
+                                <p>GROUP</p>
                             </a>
                         </li>
                         <li class="nav-item">

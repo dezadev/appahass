@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\MateriModel;
+use App\Models\GroupModel;
 
 class Materi extends BaseController
 {
@@ -12,27 +13,29 @@ class Materi extends BaseController
     public function __construct()
     {
         $this->materiModel = new MateriModel();
+        $this->groupModel = new GroupModel();
     }
     public function index()
     {
-        $materi = new MateriModel();
+
         $data = [
-            'title' => 'materi',
-            'materi' => $materi->findAll()
+            'title' => 'MATERI',
+            'materi' => $this->materiModel->findAll()
         ];
-        return view('/upload/_view', $data);
+        return view('/materi/_view', $data);
     }
     public function create()
     {
         $data = [
             'title' => 'UPLOAD',
+            'group' => $this->groupModel->findAll()
         ];
-        return view('upload/_upload', $data);
+        return view('materi/_upload', $data);
     }
     public function save()
     {
         if (!$this->validate([
-            'group' => [
+            'group_materi' => [
                 'rules' => 'required',
                 'errors' => [
                     'required' => '{field} Tidak boleh kosong'
@@ -52,49 +55,59 @@ class Materi extends BaseController
             return redirect()->back()->withInput();
         }
 
-        $materi = new MateriModel();
+        // $materiModel = new MateriModel();
         $dataMateri = $this->request->getFile('nama_materi');
-        $fileName = $dataMateri->getRandomName('nama_materi');
-        $materi->insert([
+        $fileName = $dataMateri->getName('nama_materi');
+        // dd($fileName);
+        $group_materi = $this->request->getPost('group_materi');
+        // dd($group_materi);
+
+        $this->materiModel->save([
             'nama_materi' => $fileName,
-            'group' => $this->request->getPost('group')
+            'group_materi' => $group_materi
+
         ]);
         $dataMateri->move('upload', $fileName);
         session()->setFlashdata('success', 'materi Berhasil diupload');
-        return redirect()->to(base_url('/materi/index'));
+        return redirect()->to(base_url('/materi'));
     }
-    // function download($id)
-    // {
-    //     $materi = new MateriModel();
-    //     $data = $materi->find($id);
-    //     return $this->response->download($data->nama_materi, null);
-    // }
-    // function file()
-    // {
-    //     $this->load->helper('download');
-    //     $name = $this->uri->segment(3);
-    //     $data = file_get_contents("upload/" . $name);
-    //     force_download($name, $data);
-    // }
-    function download()
+    function download($id)
     {
         // load download helder
         $this->load->helper('download');
-        // $this->MateriModel->nama_materi;
-        $filename = $this->MateriModel->nama_materi;
+
+        $filename = $this->MateriModel->find($id);
         // read file contents
-        $data = file_get_contents(base_url('/upload' . $filename));
+        $data = file_get_contents(base_url('upload/' . $filename->nama_materi));
         force_download($filename, $data);
     }
     function preview()
     {
-        // $this->MateriModel->findAll()->where->group;
+        $data = [
+            'title' => 'BACA',
+            'materi' => $this->materiModel->findAll()
+        ];
+        return view('/materi/_preview', $data);
     }
     public function delete($id)
     {
+        $namaFile = $this->materiModel->find($id);
+        unlink('upload/' . $namaFile->nama_materi);
 
         $this->materiModel->delete($id);
         session()->setFlashdata('success', 'data berhasil di hapus');
         return redirect()->to('/materi');
     }
 }
+
+
+        // $group = $this->request->getPost('group_materi');
+
+        // if ($dataMateri = $this->request->getFiles('nama_materi')) {
+        //     foreach ($dataMateri['nama_materi'] as $img) {
+        //         if ($img->isValid() && !$img->hasMoved()) {
+        //             $newName = $img->getRandomName();
+        //             $img->move(WRITEPATH . 'upload', $newName);
+        //         }
+        //     }
+        // }

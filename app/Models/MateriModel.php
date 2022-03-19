@@ -20,4 +20,12 @@ class MateriModel extends Model
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
     protected $deletedField  = 'deleted_at';
+
+    // public function getGroup()
+    // {
+    //     return $this->db->table('materi')
+    //         ->join('materi', 'nm_group.IDnm_group=materi.IDnm_group')
+    //         //  ->join('jurusan', 'jurusan.IDJurusan=siswa.IDJurusan')
+    //         ->get()->getResultArray();
+    // }
 }

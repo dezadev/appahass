@@ -32,6 +32,9 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->delete('/materi/(:num)', 'Materi::delete/$1');
+$routes->post('/materi/save', 'Materi::save');
+
 // $routes->get('/', 'Home::asy');
 // $routes->group('', ['filter' => 'login'], function($routes){
 //     $routes->get('home', 'Home::home');

@@ -5,7 +5,7 @@
 <div class="container">
     <div class="card mt-3">
         <div class="card-header">
-            <h2>DATA MATERI</h2>
+            <h2>DATA GROUP</h2>
         </div>
         <div class="card-body">
             <?php if (!empty(session()->getFlashdata('success'))) : ?>
@@ -13,13 +13,12 @@
                     <?php echo session()->getFlashdata('success'); ?>
                 </div>
             <?php endif; ?>
-            <a href="<?= base_url(); ?>/materi/create" class="btn btn-primary">Upload</a>
+            <a href="<?= base_url(); ?>/group/create" class="btn btn-primary">Tambah Group</a>
             <hr />
             <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nama Materi</th>
                         <th>Group</th>
                         <th>Action</th>
                     </tr>
@@ -27,16 +26,18 @@
                 <tbody>
                     <?php
                     $no  = 1;
-                    foreach ($materi as $row) {
+                    foreach ($group as $gr) {
                     ?>
                         <tr>
                             <td><?= $no++; ?></td>
-                            <td><?= $row->nama_materi; ?></td>
-                            <td><?= $row->group; ?></td>
+                            <td><?= $gr->group_materi; ?></td>
                             <td>
-                                <a class="btn btn-warning" href="">Baca</a>
-                                <a class="btn btn-info" href="<?= base_url(); ?>/materi/dwonload/<?= $row->nama_materi; ?>">Download</a>
-                                <a class="btn btn-danger" href="<?= base_url(); ?>/materi/delete/<?= $row->id; ?>">Delete</a>
+                                <form action="<?= base_url(); ?>/group/delete/<?= $gr->id; ?>" method="POST" class="d-inline">
+                                    <?= csrf_field(); ?>
+                                    <input type="hidden" name="_method" id="DELETE">
+                                    <button type="submit" class="btn btn-danger" onclick="return confirm('apakah anda yakin');">Delete</button>
+                                </form>
+                                <a class="btn btn-warning" href="<?= base_url(); ?>/group/edit/<?= $gr->id; ?>">Edit</a>
                             </td>
                         </tr>
                     <?php
