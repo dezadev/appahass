@@ -27,13 +27,11 @@
                 <div class="mb-3">
                     <label for="group_materi" class="form-label">Group Materi</label>
                     <div>
-                        <!-- <input  class="form-control" id="nama_materi" name="group_materi"> -->
-                        <select name="group_materi" id="group_materi" class="form-control" aria-label="Default select example">
+                        <select name="group_materi" id="group_materi" class="form-control">
                             <option selected>Pilih Group</option>
                             <?php foreach ($group as $pilih) : ?>
                                 <option value="<?= $pilih->group_materi; ?>"><?= $pilih->group_materi; ?></option>
                             <?php endforeach; ?>
-
                         </select>
                     </div>
                 </div>

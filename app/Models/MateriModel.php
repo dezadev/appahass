@@ -12,7 +12,7 @@ class MateriModel extends Model
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'object';
-    protected $allowedFields    = ['id', 'nama_materi', 'group'];
+    protected $allowedFields    = ['id', 'nama_materi', 'group_materi'];
 
     // Dates
     protected $useTimestamps = true;

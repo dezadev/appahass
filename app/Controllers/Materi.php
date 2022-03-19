@@ -78,7 +78,8 @@ class Materi extends BaseController
 
         $filename = $this->MateriModel->find($id);
         // read file contents
-        $data = file_get_contents(base_url('upload/' . $filename->nama_materi));
+        $data = file_get_contents(base_url('upload/' . $filename));
+        // dd($data);
         force_download($filename, $data);
     }
     function preview()
