@@ -20,7 +20,7 @@
                     <label for="nama_materi" class="form-label">Materi</label>
                     <!-- <input type="file" class="form-control" id="nama_materi" name="nama_materi"> -->
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="nama_materi" name="nama_materi" onchange="namaFile()">
+                        <input type="file" multiple="" class="custom-file-input" id="nama_materi" name="nama_materi[]" onchange="namaFile()">
                         <label class="custom-file-label" for="nama_materi">Choose file</label>
                     </div>
                 </div>

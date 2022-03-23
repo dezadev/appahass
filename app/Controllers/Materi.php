@@ -9,6 +9,7 @@ class Materi extends BaseController
 {
 
     protected $MateriModel;
+    protected $groupMode;
 
     public function __construct()
     {
@@ -42,7 +43,7 @@ class Materi extends BaseController
                 ]
             ],
             'nama_materi' => [
-                'rules' => 'uploaded[nama_materi]|mime_in[nama_materi,application/pdf,application/msword]',
+                'rules' => 'uploaded[nama_materi]|mime_in[nama_materi,application/pdf,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/msword,video/mp4,video/x-msvideo]',
                 'errors' => [
                     'uploaded' => 'Harus Ada File yang diupload',
                     'mime_in' => 'File Extention Harus Berupa pdf,doc',
@@ -55,38 +56,44 @@ class Materi extends BaseController
             return redirect()->back()->withInput();
         }
 
-        // $materiModel = new MateriModel();
-        $dataMateri = $this->request->getFile('nama_materi');
-        $fileName = $dataMateri->getName('nama_materi');
-        // dd($fileName);
-        $group_materi = $this->request->getPost('group_materi');
-        // dd($group_materi);
+        $dataMateri = $this->request->getFileMultiple('nama_materi');
+        foreach ($dataMateri as $img) {
+            if ($img->isValid() && !$img->hasMoved()) {
+                $fileName = $img->getName('nama_materi');
+                $group_materi = $this->request->getPost('group_materi');
+                $this->materiModel->save([
+                    'nama_materi' => $fileName,
+                    'group_materi' => $group_materi
+                ]);
 
-        $this->materiModel->save([
-            'nama_materi' => $fileName,
-            'group_materi' => $group_materi
+                $img->move('upload/', $fileName);
+            }
+        }
 
-        ]);
-        $dataMateri->move('upload', $fileName);
         session()->setFlashdata('success', 'materi Berhasil diupload');
         return redirect()->to(base_url('/materi'));
     }
     function download($id)
     {
+        // $berkas = new MateriModel();
+        $data = $this->materiModel->find($id);
+        return $this->response->download('upload/' . $data->nama_materi, null);
         // load download helder
-        $this->load->helper('download');
+        // $this->load->helper('download');
 
-        $filename = $this->MateriModel->find($id);
-        // read file contents
-        $data = file_get_contents(base_url('upload/' . $filename));
-        // dd($data);
-        force_download($filename, $data);
+        // $filename = $this->materiModel->find($id);
+        // // read file contents
+        // $data = file_get_contents(base_url('upload/' . $filename));
+        // // dd($data);
+        // force_download($filename, $data);
     }
-    function preview()
+    function preview($id)
     {
+
+
         $data = [
             'title' => 'BACA',
-            'materi' => $this->materiModel->findAll()
+            'materi' => $this->materiModel->find($id)
         ];
         return view('/materi/_preview', $data);
     }
@@ -100,15 +107,3 @@ class Materi extends BaseController
         return redirect()->to('/materi');
     }
 }
-
-
-        // $group = $this->request->getPost('group_materi');
-
-        // if ($dataMateri = $this->request->getFiles('nama_materi')) {
-        //     foreach ($dataMateri['nama_materi'] as $img) {
-        //         if ($img->isValid() && !$img->hasMoved()) {
-        //             $newName = $img->getRandomName();
-        //             $img->move(WRITEPATH . 'upload', $newName);
-        //         }
-        //     }
-        // }

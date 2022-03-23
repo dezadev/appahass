@@ -5,7 +5,7 @@
 <div class="container">
     <div class="card mt-3">
         <div class="card-header">
-            <h2>DATA GROUP</h2>
+            <h2>MASTER DATA GROUP</h2>
         </div>
         <div class="card-body">
             <?php if (!empty(session()->getFlashdata('success'))) : ?>

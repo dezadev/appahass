@@ -29,13 +29,13 @@
                         <li class="nav-item">
                             <a href="/home/claim" class="nav-link">
                                 <i class="far fa-circle text-danger nav-icon"></i>
-                                <p>WARANTY CLAIM</p>
+                                <p>WARRANTY CLAIM</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="/home/lkh" class="nav-link">
                                 <i class="far fa-circle text-info nav-icon"></i>
-                                <p>LKH</p>
+                                <p>PQM</p>
                             </a>
                         </li>
                     </ul>
@@ -61,18 +61,6 @@
                             <a href="/group" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>GROUP</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>WARANTY CLAIM</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>LKH</p>
                             </a>
                         </li>
                     </ul>
