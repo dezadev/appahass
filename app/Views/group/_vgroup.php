@@ -4,8 +4,9 @@
 
 <div class="container">
     <div class="card mt-3">
-        <div class="card-header">
-            <h2>MASTER DATA GROUP</h2>
+        <div class="card-header ">
+            <h4><b>MASTER DATA GROUP</b></h4>
+
         </div>
         <div class="card-body">
             <?php if (!empty(session()->getFlashdata('success'))) : ?>
@@ -13,7 +14,7 @@
                     <?php echo session()->getFlashdata('success'); ?>
                 </div>
             <?php endif; ?>
-            <a href="<?= base_url(); ?>/group/create" class="btn btn-primary">Tambah Group</a>
+            <a href="<?= base_url(); ?>/group/create" class="btn btn-primary btn-sm">Tambah Group</a>
             <hr />
             <table class="table table-bordered">
                 <thead>

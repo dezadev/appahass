@@ -21,7 +21,8 @@ class Materi extends BaseController
 
         $data = [
             'title' => 'MATERI',
-            'materi' => $this->materiModel->findAll()
+            'materi' => $this->materiModel->paginate(5, 'halaman'),
+            'pager' => $this->materiModel->pager,
         ];
         return view('/materi/_view', $data);
     }
@@ -75,25 +76,17 @@ class Materi extends BaseController
     }
     function download($id)
     {
-        // $berkas = new MateriModel();
+
         $data = $this->materiModel->find($id);
         return $this->response->download('upload/' . $data->nama_materi, null);
-        // load download helder
-        // $this->load->helper('download');
-
-        // $filename = $this->materiModel->find($id);
-        // // read file contents
-        // $data = file_get_contents(base_url('upload/' . $filename));
-        // // dd($data);
-        // force_download($filename, $data);
     }
     function preview($id)
     {
 
-
         $data = [
             'title' => 'BACA',
-            'materi' => $this->materiModel->find($id)
+            'materi' => $this->materiModel->viewpdf($id),
+
         ];
         return view('/materi/_preview', $data);
     }

@@ -21,11 +21,12 @@ class MateriModel extends Model
     protected $updatedField  = 'updated_at';
     protected $deletedField  = 'deleted_at';
 
-    // public function getGroup()
-    // {
-    //     return $this->db->table('materi')
-    //         ->join('materi', 'nm_group.IDnm_group=materi.IDnm_group')
-    //         //  ->join('jurusan', 'jurusan.IDJurusan=siswa.IDJurusan')
-    //         ->get()->getResultArray();
-    // }
+    public function viewpdf($id)
+    {
+        return $this->db->table("materi")
+            ->where('id', $id)
+            // ->where('nama_materi',)
+            ->get()
+            ->getResult();
+    }
 }

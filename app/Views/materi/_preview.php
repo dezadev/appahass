@@ -9,20 +9,16 @@
             <h2>PREVIEW</h2>
         </div>
         <div class="card-body">
-            <!-- <a class="btn btn-info " href="<?= base_url(); ?>/materi/index">back</a> -->
-            <?php
+            <?php //Header content type
+            $fileName = 'upload/PANDUAN AHASS SYSTEM.pdf';
+            header('Content-type: application/pdf');
+            header('Content-Disposition: inline; filename="' . $fileName . '"');
+            header('Content-Transfer-Encoding: binary');
+            // header('Content-Length: ' . filesize($file));
+            header('Accept-Ranges: bytes');
 
-            // The location of the PDF file
-            // on the server
-            $filename = 'upload/$materi->id';
-
-            // Header content type
-            header("Content-type: application/pdf");
-
-            header("Content-Length: " . filesize($filename));
-
-            // Send the file to the browser.
-            readfile($filename);
+            // Read the file
+            readfile($file);
             ?>
 
         </div>

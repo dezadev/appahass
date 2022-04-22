@@ -116,6 +116,7 @@
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="<?= base_url(); ?>/dist/js/pages/dashboard.js"></script>
     <script>
+        //menampilkan  nama file yg di upload
         function namaFile() {
 
             const file = document.querySelector('#nama_materi');
@@ -123,7 +124,12 @@
 
             fileLabel.textContent = file.files[0].name;
         }
+        //nonaktifkan klik kanan
+        document.addEventListener("contextmenu", function(e) {
+            e.preventDefault();
+        }, false);
     </script>
+
 </body>
 
 </html>

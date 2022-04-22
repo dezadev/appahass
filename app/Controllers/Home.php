@@ -67,7 +67,7 @@ class Home extends BaseController
         $query = $builder->get();
         $iti = $query->getResult();
 
-        $builder->where('group_materi', 'iti');
+        $builder->where('group_materi', 'sni');
         $query = $builder->get();
         $sni = $query->getResult();
 

@@ -62,7 +62,7 @@
 
                             <?php
                             $no  = 1;
-                            foreach ($iti as $row) {
+                            foreach ($sni as $row) {
                             ?>
                                 <tr>
                                     <td><?= $no++; ?></td>
@@ -93,7 +93,7 @@
 
                             <?php
                             $no  = 1;
-                            foreach ($sni as $row) {
+                            foreach ($iti as $row) {
                             ?>
                                 <tr>
                                     <td><?= $no++; ?></td>

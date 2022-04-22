@@ -5,7 +5,7 @@
 <div class="container">
     <div class="card mt-3">
         <div class="card-header">
-            <h2>MASTER DATA MATERI</h2>
+            <h4><b> DATA MATERI</b></h3>
         </div>
         <div class="card-body">
             <?php if (!empty(session()->getFlashdata('success'))) : ?>
@@ -13,7 +13,7 @@
                     <?php echo session()->getFlashdata('success'); ?>
                 </div>
             <?php endif; ?>
-            <a href="<?= base_url(); ?>/materi/create" class="btn btn-primary">Upload</a>
+            <a href="<?= base_url(); ?>/materi/create" class="btn btn-primary btn-sm">Upload</a>
             <hr />
             <table class="table table-bordered">
                 <thead>
@@ -50,6 +50,7 @@
                     ?>
                 </tbody>
             </table>
+            <?= $pager->links('halaman', 'pagination') ?>
         </div>
     </div>
 </div>
