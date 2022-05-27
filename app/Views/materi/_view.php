@@ -35,7 +35,7 @@
                             <td><?= $row->nama_materi; ?></td>
                             <td><?= $row->group_materi; ?></td>
                             <td>
-                                <a class="btn btn-warning btn-sm" href="<?= base_url(); ?>/materi/preview">Baca</a>
+                                <!-- <a class="btn btn-warning btn-sm" href="<?= base_url(); ?>/materi/preview">Baca</a> -->
                                 <a class="btn btn-info btn-sm" href="<?= base_url(); ?>/materi/download/<?= $row->nama_materi; ?>">Download</a>
                                 <!-- <a class="btn btn-danger" href="<?= base_url(); ?>/materi/delete/<?= $row->id; ?>">Delete</a> -->
                                 <form action="<?= base_url(); ?>/materi/delete/<?= $row->id; ?>" method="POST" class="d-inline">

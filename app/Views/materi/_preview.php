@@ -3,25 +3,17 @@
 <?= $this->section('content'); ?>
 
 <div class="container">
-    <div class="card mt-3">
+    <div class="card mt-2">
 
-        <div class="card-header">
-            <h2>PREVIEW</h2>
+        <div class="card-header mb-1">
+            <bold>PREVIEW</bold>
         </div>
         <div class="card-body">
-
-            <?php //Header content type
-            // dd($id);
-            $fileName = 'upload/PANDUAN AHASS SYSTEM.pdf';
-            header('Content-type: application/pdf');
-            header('Content-Disposition: inline; filename="' . $fileName . '"');
-            header('Content-Transfer-Encoding: binary');
-            // header('Content-Length: ' . filesize($file));
-            header('Accept-Ranges: bytes');
-
-            // Read the file
-            @readfile($file);
+            <?=
+                $no  = null;
+            foreach ($materi as $file)
             ?>
+            <iframe src="/upload/<?= $file->nama_materi; ?>" style="width:100%; height:500px;" frameborder="0"></iframe>
 
         </div>
     </div>

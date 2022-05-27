@@ -36,6 +36,8 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->delete('/materi/(:num)', 'Materi::delete/$1');
 $routes->post('/materi/save', 'Materi::save');
+// $routes->get('/materi/(:segmen)', 'Materi::save');
+
 
 // $routes->get('/', 'Home::asy');
 // $routes->group('/', ['filter' => 'login'], function ($routes) {

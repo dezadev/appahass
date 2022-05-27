@@ -38,7 +38,7 @@
                                     <td><?= $row->nama_materi; ?></td>
                                     <td><?= $row->group_materi; ?></td>
                                     <td>
-                                        <a class="btn btn-warning btn-sm" href="<?= base_url(); ?>/materi/preview">Baca</a>
+                                        <a class="btn btn-warning btn-sm" href="<?= base_url(); ?>/materi/preview/<?= $row->id; ?>">Baca</a>
                                         <a class="btn btn-info btn-sm" href="<?= base_url(); ?>/materi/download/<?= $row->nama_materi; ?>">Download</a>
                                     </td>
                                 </tr>
@@ -69,7 +69,7 @@
                                     <td><?= $row->nama_materi; ?></td>
                                     <td><?= $row->group_materi; ?></td>
                                     <td>
-                                        <a class="btn btn-warning btn-sm" href="<?= base_url(); ?>/materi/preview">Baca</a>
+                                        <a class="btn btn-warning btn-sm" href="<?= base_url(); ?>/materi/preview/<?= $row->id; ?>">Baca</a>
                                         <a class="btn btn-info btn-sm" href="<?= base_url(); ?>/materi/dwonload/<?= $row->nama_materi; ?>">Download</a>
                                     </td>
                                 </tr>
@@ -100,7 +100,7 @@
                                     <td><?= $row->nama_materi; ?></td>
                                     <td><?= $row->group_materi; ?></td>
                                     <td>
-                                        <a class="btn btn-warning btn-sm" href="<?= base_url(); ?>/materi/preview">Baca</a>
+                                        <a class="btn btn-warning btn-sm" href="<?= base_url(); ?>/materi/preview/<?= $row->id; ?>">Baca</a>
                                         <a class="btn btn-info btn-sm" href="<?= base_url(); ?>/materi/download/<?= $row->nama_materi; ?>">Download</a>
                                     </td>
                                 </tr>

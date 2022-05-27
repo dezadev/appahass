@@ -38,7 +38,7 @@
                                     <td><?= $row->nama_materi; ?></td>
                                     <td><?= $row->group_materi; ?></td>
                                     <td>
-                                        <a class="btn btn-warning btn-sm" href="<?= base_url(); ?>/materi/preview">Baca</a>
+                                        <a class="btn btn-warning btn-sm" href="<?= base_url(); ?>/materi/preview/<?= $row->id; ?>">Baca</a>
                                         <a class="btn btn-info btn-sm" href="<?= base_url(); ?>/materi/download/<?= $row->nama_materi; ?>">Download</a>
                                     </td>
                                 </tr>
@@ -48,13 +48,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="tab-pane fade" id="nav-profil" role="tabpanel">
-                    INI ISI
-                </div>
-                <div class="tab-pane fade" id="nav-kontak" role="tabpanel">
-                    <h4>Kontak</h4>
-                    <p>Email : malasngoding@gmail.com</p>
-                </div>
+
             </div>
             <!-- coba tab -->
 

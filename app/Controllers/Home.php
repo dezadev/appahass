@@ -79,4 +79,16 @@ class Home extends BaseController
         ];
         return view('page/lkh', $data);
     }
+    public function nsp()
+    {
+        $builder = $this->db->table("materi");
+        $builder->where('group_materi', 'nsp');
+        $query = $builder->get();
+        $nsp = $query->getResult();
+        $data = [
+            'title' => 'NSP',
+            'materi' => $nsp
+        ];
+        return view('page/nsp', $data);
+    }
 }

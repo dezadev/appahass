@@ -21,7 +21,7 @@ class Materi extends BaseController
 
         $data = [
             'title' => 'MATERI',
-            'materi' => $this->materiModel->paginate(5, 'halaman'),
+            'materi' => $this->materiModel->paginate(10, 'halaman'),
             'pager' => $this->materiModel->pager,
         ];
         return view('/materi/_view', $data);
@@ -80,15 +80,16 @@ class Materi extends BaseController
         $data = $this->materiModel->find($id);
         return $this->response->download('upload/' . $data->nama_materi, null);
     }
-    function preview()
+    function preview($id)
     {
 
         $data = [
             'title' => 'BACA',
-            'materi' => $this->materiModel->nama_materi,
+            // 'materi' => $this->materiModel->find($id),
+            'materi' => $this->materiModel->viewpdf($id),
 
         ];
-
+        // dd($data);
         return view('/materi/_preview', $data);
     }
     public function delete($id)

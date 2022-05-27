@@ -38,6 +38,12 @@
                                 <p>PQM</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="/home/nsp" class="nav-link">
+                                <i class="far fa-circle text-success nav-icon"></i>
+                                <p>NSP</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <br>
