@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="<?= base_url(); ?>/../../dist/css/adminlte.min.css">
 </head>
 
-<body background="/dist/img/photo1.png" class="hold-transition register-page">
+<body background="/dist/img/bg1.png" class="hold-transition register-page">
     <div class="login-box">
         <div class="login-logo card">
             <a href="/login"><b>Form</b> Login</a>

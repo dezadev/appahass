@@ -80,14 +80,15 @@ class Materi extends BaseController
         $data = $this->materiModel->find($id);
         return $this->response->download('upload/' . $data->nama_materi, null);
     }
-    function preview($id)
+    function preview()
     {
 
         $data = [
             'title' => 'BACA',
-            'materi' => $this->materiModel->viewpdf($id),
+            'materi' => $this->materiModel->nama_materi,
 
         ];
+
         return view('/materi/_preview', $data);
     }
     public function delete($id)
