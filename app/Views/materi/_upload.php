@@ -22,7 +22,10 @@
                     <div class="custom-file">
                         <input type="file" multiple="" class="custom-file-input" id="nama_materi" name="nama_materi[]" onchange="namaFile()">
                         <label class="custom-file-label" for="nama_materi">Choose file</label>
+                        <p id="detail_file"></p>
+
                     </div>
+
                 </div>
                 <div class="mb-3">
                     <label for="group_materi" class="form-label">Group Materi</label>
@@ -36,7 +39,7 @@
                     </div>
                 </div>
                 <div class="mb-3">
-                    <input type="submit" class="btn btn-danger" value="Upload" />
+                    <input type="submit" id="btn_upload" class="btn btn-danger" value="Upload" />
                 </div>
             </form>
 
@@ -45,8 +48,3 @@
 </div>
 
 <?= $this->endSection(); ?>
-
-
-
-<!-- <option value="<?= $pilih->group_materi; ?>" <?= (isset($pilih->group_materi) && $pilih->group_materi == $pilih->id) ?
-                                                        'selected' : '' ?>> <?= $pilih->group_materi ?></option>

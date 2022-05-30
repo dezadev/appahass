@@ -71,6 +71,9 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="/login/logout" class="nav-link btn btn-outline-success mr-3">logout</a>
+                </li>
             </ul>
 
         </nav>

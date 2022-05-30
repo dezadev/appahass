@@ -44,11 +44,11 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <!-- <li class="nav-item d-none d-sm-inline-block">
-          <a href="#" class="nav-link">Home</a>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-          <a href="#" class="nav-link">Contact</a>
-        </li> -->
+                    <a href="#" class="nav-link">Home</a>
+                </li> -->
+                <!-- <li class="nav-item d-none d-sm-inline-block">
+                    <a href="login/logout" class="nav-link">logout</a>
+                </li> -->
             </ul>
         </nav>
         <!-- /.navbar -->
@@ -128,6 +128,42 @@
         document.addEventListener("contextmenu", function(e) {
             e.preventDefault();
         }, false);
+    </script>
+    <script>
+        $('document').ready(function() {
+            $('#nama_materi').change(function() {
+                FileDetails();
+            });
+
+        });
+    </script>
+    <script>
+        function FileDetails() {
+            var fi = document.getElementById('nama_materi');
+            if (fi.files.length > 0) {
+                document.getElementById('detail_file').innerHTML =
+                    'Total Files: <b>' + fi.files.length + '</b></br >';
+                for (var i = 0; i <= fi.files.length - 1; i++) {
+                    var no_file = i + 1;
+                    var fname = fi.files.item(i).name;
+                    var fsize = fi.files.item(i).size;
+                    document.getElementById('detail_file').innerHTML =
+                        document.getElementById('detail_file').innerHTML + no_file + ". " +
+                        fname + ' (<b>' + bytesToSize(fsize) + '</b>)<br>';
+                }
+                document.getElementById('detail_file').style.display = "block";
+                document.getElementById('span_file').style.display = "none";
+            } else {
+                alert('Please select a file.')
+            }
+        }
+
+        function bytesToSize(bytes) {
+            var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+            if (bytes == 0) return '0 Byte';
+            var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
+            return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
+        }
     </script>
 
 </body>

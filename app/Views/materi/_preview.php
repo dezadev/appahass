@@ -13,7 +13,7 @@
                 $no  = null;
             foreach ($materi as $file)
             ?>
-            <iframe src="/upload/<?= $file->nama_materi; ?>" style="width:100%; height:500px;" frameborder="0"></iframe>
+            <object data="/upload/<?= $file->nama_materi; ?>" type="application/pdf" style="width:100%; height:500px;" frameborder="0"></iframe>
 
         </div>
     </div>

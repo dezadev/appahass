@@ -33,19 +33,23 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 // $routes->get('/register', 'Register::index');
 // $routes->post('/register/process', 'Register::process');
-$routes->get('/', 'Home::index');
-$routes->delete('/materi/(:num)', 'Materi::delete/$1');
-$routes->post('/materi/save', 'Materi::save');
-// $routes->get('/materi/(:segmen)', 'Materi::save');
+// $routes->get('/login', 'Login::index');
+// $routes->post('/login/process', 'Login::process');
 
 
-// $routes->get('/', 'Home::asy');
-// $routes->group('/', ['filter' => 'login'], function ($routes) {
-//     $routes->get('home', 'Home::home');
-//     $routes->get('/', 'Home::index');
-//     $routes->delete('/materi/(:num)', 'Materi::delete/$1');
-//     $routes->post('/materi/save', 'Materi::save');
-// });
+// $routes->get('/', 'Home::index');
+// $routes->delete('/materi/(:num)', 'Materi::delete/$1');
+// $routes->post('/materi/save', 'Materi::save');
+
+
+// $routes->get('/', 'Home::index');
+$routes->group('/', ['filter' => 'login'], function ($routes) {
+    $routes->get('home', 'Home::home');
+    $routes->get('/', 'Home::index');
+    $routes->delete('/materi/(:num)', 'Materi::delete/$1');
+    $routes->post('/materi/save', 'Materi::save');
+    $routes->get('/logout', 'Login::logout');
+});
 /*
  * --------------------------------------------------------------------
  * Additional Routing
