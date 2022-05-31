@@ -16,14 +16,14 @@
     <link rel="stylesheet" href="<?= base_url(); ?>/../../dist/css/adminlte.min.css">
 </head>
 
-<body background="/dist/img/bg1.png" width="100%" class="hold-transition register-page">
+<body background="/dist/img/bg4.jpg" class="hold-transition register-page">
     <div class="login-box">
         <div class="login-logo card">
             <a href="/login"><b>Form</b> Login</a>
         </div>
         <!-- /.login-logo -->
         <div class="card mt-2">
-            <div class="card-body login-card-body">
+            <div class="card-body login-card-body card">
                 <?php if (!empty(session()->getFlashdata('error'))) : ?>
                     <div class="alert alert-warning alert-dismissible fade show" role="alert">
                         <?php echo session()->getFlashdata('error'); ?>

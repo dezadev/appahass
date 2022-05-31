@@ -16,13 +16,13 @@
     <link rel="stylesheet" href="<?= base_url(); ?>/../../dist/css/adminlte.min.css">
 </head>
 
-<body background="/dist/img/photo1.png" class="hold-transition register-page">
+<body background="/dist/img/bg4.jpg" class="hold-transition register-page">
     <div class="register-box">
         <div class="register-logo card">
             <a href="/register"><b>Form</b> Register</a>
         </div>
         <div class="card mt-2">
-            <div class="card-body register-card-body">
+            <div class="card-body register-card-body card">
 
                 <form method="post" action="<?= base_url(); ?>/register/process">
                     <?= csrf_field(); ?>

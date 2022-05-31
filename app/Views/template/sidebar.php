@@ -4,6 +4,9 @@
         <img src="<?= base_url(); ?>/dist/img/ahass.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">AHASS LEARNING</span>
     </a>
+    <a href="#" class="brand-link">
+        <span class="brand-text font-weight-light">Hai ! <?= session()->get('name'); ?></span>
+    </a>
     <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar Menu -->
@@ -12,6 +15,7 @@
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                 <li class="nav-item menu-open">
+
                     <a href="#" class="nav-link active">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
@@ -23,13 +27,13 @@
                         <li class="nav-item">
                             <a href="/home/asy" class="nav-link">
                                 <i class="far fa-circle text-warning nav-icon"></i>
-                                <p>AHASS SYSTEM</p>
+                                <p>NMS</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="/home/claim" class="nav-link">
                                 <i class="far fa-circle text-danger nav-icon"></i>
-                                <p>WARRANTY CLAIM</p>
+                                <p>WCL</p>
                             </a>
                         </li>
                         <li class="nav-item">

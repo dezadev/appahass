@@ -31,21 +31,22 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-// $routes->get('/register', 'Register::index');
-// $routes->post('/register/process', 'Register::process');
-// $routes->get('/login', 'Login::index');
-// $routes->post('/login/process', 'Login::process');
+$routes->get('/register', 'Register::index');
+$routes->post('/register/process', 'Register::process');
+$routes->get('/login', 'Login::index');
+$routes->post('/login/process', 'Login::process');
 
 
 // $routes->get('/', 'Home::index');
+// $routes->get('/Home', 'Home::index', ['filter' => 'auth']);
 // $routes->delete('/materi/(:num)', 'Materi::delete/$1');
 // $routes->post('/materi/save', 'Materi::save');
 
 
 // $routes->get('/', 'Home::index');
-$routes->group('/', ['filter' => 'login'], function ($routes) {
-    $routes->get('home', 'Home::home');
-    $routes->get('/', 'Home::index');
+$routes->group('/', ['filter' => 'auth'], function ($routes) {
+    // $routes->get('/Home', 'Home::Home');
+    $routes->get('home', 'Home::index');
     $routes->delete('/materi/(:num)', 'Materi::delete/$1');
     $routes->post('/materi/save', 'Materi::save');
     $routes->get('/logout', 'Login::logout');
