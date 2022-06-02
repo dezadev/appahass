@@ -70,7 +70,7 @@
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            Copyright &copy; 2019-<?= date('Y'); ?> <a href="https://adminlte.io">TSD JATENG</a>
+            Copyright &copy; 2019-<?= date('Y'); ?> <a href="#">TSD JATENG</a>
         </footer>
 
         <!-- Control Sidebar -->

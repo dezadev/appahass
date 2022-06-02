@@ -11,7 +11,7 @@
             <!-- coba tab -->
             <nav>
                 <div class="nav nav-tabs" id="nav-tab">
-                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab">PANDUAN CLAIM</a>
+                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab">PANDUAN MOTION H2</a>
                     <!-- <a class="nav-item nav-link" id="nav-profil-tab" data-toggle="tab" href="#nav-profil" role="tab">ASMO ID</a> -->
                     <!-- <a class="nav-item nav-link" id="nav-kontak-tab" data-toggle="tab" href="#nav-kontak" role="tab">Kontak</a> -->
                 </div>

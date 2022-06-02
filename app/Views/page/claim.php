@@ -4,16 +4,11 @@
 
 <div class="container">
     <div class="card mt-3">
-        <!-- <div class="card-header mt-2">
-            <h3>DATA MATERI</h3>
-        </div> -->
         <div class="card-body p-3">
             <!-- coba tab -->
             <nav>
                 <div class="nav nav-tabs" id="nav-tab">
                     <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab">PANDUAN CLAIM</a>
-                    <!-- <a class="nav-item nav-link" id="nav-profil-tab" data-toggle="tab" href="#nav-profil" role="tab">ASMO ID</a> -->
-                    <!-- <a class="nav-item nav-link" id="nav-kontak-tab" data-toggle="tab" href="#nav-kontak" role="tab">Kontak</a> -->
                 </div>
             </nav>
             <div class="tab-content mt-2" id="nav-tabContent">
